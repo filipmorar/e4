@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.example.e4.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginFragment">
+
+        <EditText
+            android:id="@+id/login_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginStart="@dimen/margin_start"
+            android:layout_marginEnd="@dimen/margin_start"
+            android:hint="@string/enter_table_number"
+            android:text="@={loginViewModel.table}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="Autofill,LabelFor,TextFields" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:onClick="@{_ -> loginViewModel.onLogin()}"
+            app:layout_constraintTop_toBottomOf="@id/login_edit_text"
+            app:layout_constraintStart_toStartOf="@id/login_edit_text"
+            app:layout_constraintEnd_toEndOf="@id/login_edit_text"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
