@@ -2,7 +2,6 @@ package com.example.e4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.e4.ui.login.LoginFragment
 
 class MainActivity : AppCompatActivity() {
 

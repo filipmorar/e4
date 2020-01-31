@@ -28,8 +28,9 @@ object ApiProvider {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun provideLoginApi(): LoginApi{
-        return retrofit.create(LoginApi::class.java)
+
+    fun provideGetTasksApi(): GetTaskApi{
+        return retrofit.create(GetTaskApi::class.java)
     }
 
     fun clearAPI() {
